@@ -1,0 +1,1 @@
+With content we mean everything you need to write your blog, posts, pages. You have the flexibilty to use just what you need. You don't have to dig deep into the functionality of Sasige when you write your whole page in markdown. But you have the power to do awesome things, when it need to be awesome.

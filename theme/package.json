@@ -1,0 +1,18 @@
+{
+  "id": "sasige-docs",
+  "name": "Sasige Docs Theme",
+  "github": "brainfoolong/sasige-docs",
+  "option": {
+    "navigationPagesetTags" : ["navigation"]
+  },
+  "translation": {
+    "en": {
+      "menu": "Menu",
+      "lastUpdated" : "Last updated"
+    },
+    "de": {
+      "menu": "Menü",
+      "lastUpdated" : "Zuletzt aktualisiert"
+    }
+  }
+}
