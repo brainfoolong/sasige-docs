@@ -57,9 +57,9 @@ $leadText = $page->getLeadText();
 <div class="page">
     <header>
         <h1 class="pagetitle"><?= $page->getPageTitle() ?>
-            <? if ($leadText) { ?>
+            <?php if ($leadText) { ?>
                 <div class="leadtext"><?= $leadText ?></div>
-            <? } ?>
+            <?php } ?>
         </h1>
         <div class="divider"></div>
     </header>
