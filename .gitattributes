@@ -1,4 +1,7 @@
-* text eol=lf
+*.txt text eol=lf
+*.php text eol=lf
+*.md text eol=lf
+*.html text eol=lf
 *.png binary
 *.jpg binary
 *.gif binary
