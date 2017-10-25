@@ -3,11 +3,11 @@
 namespace Nullix\Sasige;
 
 $page = Page::getCurrent();
-$page->setPageTitle("Continuous Integration");
+$page->setPageTitle("Hosting / Deployment");
 $page->setParentToDirectory();
 $page->setDate("now");
-$page->setLabel("Continuous Integration");
-$page->setSort(2);
+$page->setLabel("Hosting / Deployment");
+$page->setSort(8);
 $page->setTags(["site", "navigation"]);
 $page->setThemeTemplate("post");
 $page->setContentByMarkdownFileSelf();

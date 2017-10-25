@@ -20,6 +20,7 @@ $leadText = $page->getLeadText();
     <meta name="author" content="Sasige">
     <title><?= $page->getPageTitle() ?></title>
     <link href="<?= $page->getThemeCssUrl(["stylesheets/page.scss"]) ?>" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="<?= $page->getPublicRootUrl("favicon.ico") ?>">
 </head>
 <body>
 <nav>
