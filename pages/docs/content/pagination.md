@@ -48,7 +48,7 @@ As you can see, this is a little more advanced. You, as a content writer, should
 
     public static function listPosts(Pagination $pagination)
     {
-        $pages = $pagination->getPagesForPageNr();
+        $pages = $pagination->getPagesOfPage();
         foreach ($pages as $navPage) {
             $date = $navPage->getDate();
             echo '<article class="post-entry">';

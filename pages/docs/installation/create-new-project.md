@@ -1,11 +1,10 @@
 ## Create a new project
 
-To start a new project we simply take our starter project. You can than modify everything to your needs.
+The best way to start is to just download the [Sasige Starter](https://github.com/brainfoolong/sasige-starter/archive/master.zip) repository. 
 
     mkdir sasige-website && cd sasige-website
-    wget urlexample -O sasige.zip && unzip sasige.zip && rm sasige.zip
+    wget https://github.com/brainfoolong/sasige-starter/archive/master.zip -O sasige.zip && unzip sasige.zip && rm sasige.zip
     ./sasige/bin/sasige build
-    ./sasige/bin/sasige serve
     # => Now look into folder public or use following command
     ./sasige/bin/sasige serve
     # => Now browse to http://localhost:4433

@@ -25,7 +25,7 @@ Let's take an example of this documentation page
     $page->setThemeTemplate("post");
     $page->setContentByMarkdownFileSelf();
     
-So, what does all this? A short explanation. In the starter project there is a detailed explanation of everything.
+So, what does all this? A short explanation.
 
 * `<?php` Open tag for PHP - Mark begin of PHP code
 * `namespace Nullix\Sasige;` The namespace where in, is always the same

@@ -3,10 +3,10 @@
 namespace Nullix\Sasige;
 
 $page = Page::getCurrent();
-$page->setPageTitle("Helper classes");
+$page->setPageTitle("Continues Integration");
 $page->setParentToDirectory();
 $page->setDate("now");
-$page->setLabel("Helper classes");
+$page->setLabel("Continues Integration");
 $page->setSort(1);
 $page->setTags(["site", "navigation"]);
 $page->setThemeTemplate("post");

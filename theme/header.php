@@ -25,19 +25,15 @@ $leadText = $page->getLeadText();
 <body>
 <nav>
     <div class="screen-small">
-        <div class="logo">
-            <div class="icon"><img src="<?= $page->getPublicRootUrl("logo.png") ?>" alt="logo"></div>
-            <div class="menu" onclick="document.getElementById('mobilemenu').classList.toggle('active')"><img
+        <div class="table">
+            <div class="a"><img src="<?= $page->getPublicRootUrl("logo.png") ?>" alt="logo"></div>
+            <div class="b" onclick="document.getElementById('mobilemenu').classList.toggle('active')"><img
                         src="<?= $page->getThemeUrl("ic_menu_white_24px.svg") ?>"
                         alt="<?= Theme::getTranslation("menu") ?>"></div>
         </div>
         <div id="mobilemenu">
             <?php
-            $pageset = new Pageset();
-            $pageset->includePagesByTags(Theme::getOption("navigationPagesetTags"));
-            $pageset->filterPagesByLanguage($page->getLanguage());
-            $pageset->setOrderBy("+sort");
-            echo $pageset->getHtmlListRecursive();
+            ThemeHelper::showDefaultMenu();
             ?>
         </div>
     </div>
@@ -46,11 +42,7 @@ $leadText = $page->getLeadText();
             <div class="icon"><img src="<?= $page->getPublicRootUrl("logo.png") ?>" alt="logo"></div>
         </div>
         <?php
-        $pageset = new Pageset();
-        $pageset->includePagesByTags(Theme::getOption("navigationPagesetTags"));
-        $pageset->filterPagesByLanguage($page->getLanguage());
-        $pageset->setOrderBy("+sort");
-        echo $pageset->getHtmlListRecursive();
+        ThemeHelper::showDefaultMenu();
         ?>
     </div>
 </nav>

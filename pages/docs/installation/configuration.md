@@ -10,5 +10,4 @@ In your project folder you will find the `config.php`. This file contains the pr
     Config::setPagesFolder("pages"); // folder that contains the pages files
     Config::setStaticFolder("static"); // folder that contains the static files that will be merged into the output folder
     Config::setHideIndexHtmlInUrls(false); // if true than the string "index.html" will be removed when generate page links
-    Config::setAdditionalSrcFolder("src"); // folder where you can add custom PHP classes for maximum flexibilty
     Config::setServerPort(4433); // server port when use "sasige serve"
