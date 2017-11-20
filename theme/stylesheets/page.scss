@@ -1,7 +1,6 @@
 $fontOther: "Helvetica", "Arial", sans-serif;
 $fontHighlight: "Bebas Neue", "Helvetica", "Arial", sans-serif;
 $colorHighlight: #008eff;
-$colorHighlight2: #62aee6;
 
 @font-face {
     font-family: 'Bebas Neue';
@@ -42,279 +41,146 @@ h1, h2, h3 {
     margin: 0;
 }
 
-nav {
-    .logo {
-        line-height: 1.3;
-        font-family: $fontHighlight;
-        background: $colorHighlight;
-        text-align: center;
-        padding: 10px;
-        margin-bottom: 20px;
-        color: white;
-        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-        .icon img {
-            width: 80%;
-        }
-        .big {
-            font-weight: bold;
-            font-size: 32px;
-        }
-    }
-    position: absolute;
-    min-height: 100%;
-    width: 250px;
-    left: 0;
+header {
+    background: $colorHighlight;
+    padding: 10px;
+    position: fixed;
     top: 0;
-    font-size: 18px;
-    .pageset-list-level-1 > .pageset-list-item > a {
-        font-weight: bold;
-        color: #222222;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    color: white;
+    z-index: 1;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    .logo {
+        font-family: $fontHighlight;
+        font-size: 56px;
+        line-height: 1;
+        font-weight: bolder;
+        width: 250px;
+        text-align: center;
+        text-shadow: 1px 1px 0 black;
+        .sub {
+            font-weight: normal;
+            font-size: 24px;
+            text-shadow: none;
+        }
     }
-    .pageset-list-item-active > a {
-        border-left: 5px solid $colorHighlight;
-    }
-    .pageset-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        padding-bottom: 50px;
-
-    }
-    .pageset-list-item {
-        padding: 0;
-        margin: 0;
-    }
-
-    .pageset-list a {
-        display: block;
-        padding: 5px;
-        padding-left: 15px;
-        border-left: 5px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .pageset-list .pageset-list-item-active > a,
-    .pageset-list a:hover {
-        border-left: 5px solid $colorHighlight;
-    }
-    .pageset-list-level-1 {
+    h1 {
+        text-shadow: 1px 1px 0 black;
         padding-left: 20px;
-        font-size: 14px;
-    }
-    .pageset-list-level-2 {
-        padding-left: 20px;
-        font-size: 14px;
+        font-family: $fontHighlight;
+        font-size: 56px;
+        line-height: 1;
+        .leadtext {
+            font-size: 24px;
+            text-shadow: none;
+        }
     }
 }
 
-header {
-    h1 {
-        font-family: $fontHighlight;
-        font-weight: bold;
-        padding: 20px;
-        padding-left: 0;
-        font-size: 36px;
-        line-height: 1.3;
-        .leadtext {
-            font-size: 22px;
-            font-weight: normal;
+h2 {
+    font-family: $fontHighlight;
+    font-size: 36px;
+    padding: 0;
+    margin: 0;
+    border-left: 5px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    left: -30px;
+    padding-left: 25px;
+}
+
+.page {
+    padding: 20px;
+    padding-left: 280px;
+    padding-top: 140px;
+    max-width: 900px;
+    min-width: 300px;
+}
+
+.pagination-list {
+    list-style-type: none;
+    .pagination-list-item {
+        display: inline-block;
+        a {
+            display: block;
+            padding: 5px;
+            margin-right: 2px;
+            background: #f5f5f5;
+        }
+    }
+    .pagination-list-item-active a {
+        background: $colorHighlight;
+        color: white;
+    }
+}
+
+.post-entry {
+    border-bottom: 1px solid #f5f5f5;
+    padding: 5px;
+}
+
+nav {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 250px;
+    min-height: calc(100% - 120px);
+    .sidebar {
+        .pageset-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            .pageset-list-item {
+                padding-left: 10px;
+                a {
+                    border-left: 5px solid transparent;
+                    display: block;
+                    padding: 3px;
+                    padding-left: 10px;
+                }
+            }
+            .pageset-list-item-active > a, a:hover {
+                border-left: 5px solid $colorHighlight;
+            }
+        }
+        .pageset-list-level-0 {
+            padding: 10px;
+        }
+        .pageset-list-level-0 > .pageset-list-item > a {
+            font-size: 24px;
+            font-family: $fontHighlight;
+        }
+        .pageset-list-level-1 > .pageset-list-item > a {
+            font-size: 20px;
+            font-family: $fontHighlight;
+            color: #333333;
+        }
+        .pageset-list-level-2 > .pageset-list-item > a {
+            font-size: 14px;
             color: #666666;
         }
     }
 }
 
-.console {
-    .header {
-        background: #e5e5e5;
-        padding: 5px;
-        text-align: center;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
+.content {
+    .head {
+        font-size: 12px;
+        color: #999999;
     }
-    .window {
-        font-family: "Courier New";
-        color: white;
-        background: #222222;
-        padding: 10px;
-        white-space: pre;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
-}
-
-code {
-    font-family: "Courier New";
-    color: #525252;
-    background: #ededed;
-    padding: 0 5px 0 5px;
-    white-space: pre;
-    border-radius: 5px;
 }
 
 pre code {
     display: block;
     padding: 10px;
-    white-space: pre;
-    border-radius: 5px;
-    overflow-x: auto;
+    overflow: auto;
 }
 
-.page {
-    padding: 20px;
-    padding-left: 270px;
-}
-
-.pagination-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    .pagination-list-item {
-        display: inline-block;
-        padding: 0;
-        margin: 0;
-        a {
-            display: block;
-            padding: 10px;
-            background: $colorHighlight;
-            color: white;
-            margin-right: 1px;
-            border-radius: 3px;
-        }
-    }
-    .pagination-list-item-active a {
-        background: #222222;
-    }
-}
-
-.content {
-    max-width: 900px;
-    h2 {
-        font-family: $fontHighlight;
-        line-height: 1.3;
-        padding: 10px;
-        padding-left: 0;
-        font-weight: bold;
-        font-size: 26px;
-    }
-    .head {
-
-    }
-    time {
-        font-size: 14px;
-        color: #aaaaaa;
-    }
-}
-
-.post-entry {
-    display: block;
-    position: relative;
-    padding-left: 65px;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #e5e5e5;
-    h2 {
-        border: 0;
-        padding: 0;
-        line-height: 1.3;
-    }
-    .leadtext {
-        margin: 0;
-    }
-    time {
-        transition: 0.3s;
-        position: absolute;
-        left: 0;
-        top: 0;
-        box-shadow: rgba(0, 0, 0, 0.2) 0 0 10px;
-        width: 50px;
-        font-size: 12px;
-        span {
-            display: block;
-            text-align: center;
-            padding: 1px;
-            &.month, &.year {
-                background: $colorHighlight;
-                color: white;
-            }
-        }
-    }
-    &:hover {
-        time {
-            left: 5px;
-        }
-    }
-}
-
-footer {
-    font-size: 11px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    margin-top: 50px;
-    text-align: center;
-    color: #aaaaaa;
-    a, a:hover, a:active {
-        color: #aaaaaa;
-    }
-}
-
-.screen-small {
-    display: none;
-}
-
-@media (max-width: 700px) {
-    .screen-small {
-        display: block;
-    }
-    .screen-big {
-        display: none;
-    }
-    body {
-        background-image: none;
-    }
-    #mobilemenu {
-        display: none;
-        background: white;
-        padding-top: 20px;
-        &.active {
-            display: block;
-        }
-    }
-    nav {
-        width: 100%;
-        min-height: 0;
-        position: static;
-        top: 0;
-        left: 0;
-        color: white;
-        background: $colorHighlight;
-        padding-bottom: 0;
-        border-bottom: 5px solid #f5f5f5;
-        .pageset-list {
-            padding-bottom: 10px;
-        }
-        .table {
-            display: table;
-            .a, .b {
-                vertical-align: middle;
-                display: table-cell;
-            }
-            .a {
-                width: 25%;
-                padding: 5px;
-                padding-left: 5%;
-                padding-right: 25%;
-            }
-            .b {
-                width: 20%;
-                padding-left: 20%;
-                padding-right: 10%;
-            }
-            img {
-                width: 100%;
-
-            }
-        }
-    }
-    .page {
-        padding: 20px;
-    }
+code {
+    background: #f5f5f5;
+    color: #666666;
+    font-family: "Courier New";
 }

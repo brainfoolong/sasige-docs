@@ -23,24 +23,20 @@ $leadText = $page->getLeadText();
     <link rel="shortcut icon" type="image/x-icon" href="<?= $page->getPublicRootUrl("favicon.ico") ?>">
 </head>
 <body>
-<nav>
-    <div class="screen-small">
-        <div class="table">
-            <div class="a"><img src="<?= $page->getPublicRootUrl("logo.png") ?>" alt="logo"></div>
-            <div class="b" onclick="document.getElementById('mobilemenu').classList.toggle('active')"><img
-                        src="<?= $page->getThemeUrl("ic_menu_white_24px.svg") ?>"
-                        alt="<?= Theme::getTranslation("menu") ?>"></div>
-        </div>
-        <div id="mobilemenu">
-            <?php
-            ThemeHelper::showDefaultMenu();
-            ?>
+<header>
+    <div class="logo">
+        <div class="item">
+            <div class="main">SASIGE</div>
+            <div class="sub">Static Site Generator</div>
         </div>
     </div>
-    <div class="screen-big">
-        <div class="logo">
-            <div class="icon"><img src="<?= $page->getPublicRootUrl("logo.png") ?>" alt="logo"></div>
-        </div>
+    <h1 class="pagetitle"><?= $page->getPageTitle() ?>
+        <?php if ($leadText) { ?>
+            <div class="leadtext"><?= $leadText ?></div>
+        <?php } ?></h1>
+</header>
+<nav>
+    <div class="sidebar">
         <?php
         ThemeHelper::showDefaultMenu();
         ?>
@@ -48,11 +44,3 @@ $leadText = $page->getLeadText();
 </nav>
 
 <div class="page">
-    <header>
-        <h1 class="pagetitle"><?= $page->getPageTitle() ?>
-            <?php if ($leadText) { ?>
-                <div class="leadtext"><?= $leadText ?></div>
-            <?php } ?>
-        </h1>
-        <div class="divider"></div>
-    </header>
