@@ -27,7 +27,6 @@ $leadText = $page->getLeadText();
     <div class="logo">
         <div class="item">
             <div class="main">SASIGE</div>
-            <div class="sub">Static Site Generator</div>
         </div>
     </div>
     <h1 class="pagetitle"><?= $page->getPageTitle() ?>
