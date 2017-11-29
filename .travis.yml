@@ -1,7 +1,7 @@
 language: php
 php:
   - '5.6'
-script: php -d short_open_tag=1 -f sasige/bin/sasige.php build
+script: sasige/bin/sasige build
 deploy:
   provider: pages
   skip_cleanup: true

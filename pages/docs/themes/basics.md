@@ -25,7 +25,7 @@ This will create one file that contain the contents of this 2 files.
 
 ## The rest is up to you
 
-In the root theme folder you can insert whatever you want. Every `.php` file you create here is available as a template for the user by calling `$page->setThemeTemplate("xxx");`. In the real world there are some templates you should create. Best way to see what common standards are, you can use the starter project.
+In the root theme folder you can insert whatever you want. Every `.php` file you create here is available as a template for the user by calling `$page->setThemeTemplate("xxx");`. In the real world there are some templates you should create. Best way to see what common standards are, you can use the [starter project](../installation/create-new-project.html).
 
 * site.php - Used to output raw HTML in the page layouts content.
 * post.php - Used to output posts. Should have a headline, leadtext, timestamp and content.
