@@ -8,6 +8,6 @@ $files = File::getFiles($rootFolder, "~.*?\.html~", true);
 $fileData = [];
 foreach ($files as $file) {
     $relativePath = mb_substr($file, strlen($rootFolder));
-    $fileData[] = "https://sasige.0x.at" . $relativePath;
+    $fileData[] = "http://sasige.0x.at" . $relativePath;
 }
 file_put_contents($rootFolder . "/sitemap.txt", implode("\n", $fileData));
