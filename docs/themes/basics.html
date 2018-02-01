@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Sasige">
+    <title>Basics</title>
+    <link href="../../sasige-generated/sasige-fc6e5dcc4f8c52180277880e0150d2a2.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <div class="item">
+            <div class="main">SASIGE</div>
+        </div>
+    </div>
+    <h1 class="pagetitle">Basics        </h1>
+</header>
+<nav>
+    <div class="sidebar">
+        <ul class="pageset-list pageset-list-level-0"><li class="pageset-list-item "><a href="../../index.html" class="pageset-link">Home</a></li><li class="pageset-list-item "><a href="../../docs.html" class="pageset-link">Documentation</a><ul class="pageset-list pageset-list-level-1"><li class="pageset-list-item "><a href="../../docs/installation.html" class="pageset-link">Installation</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/installation/quick-start-linux.html" class="pageset-link">Quick Start on Linux</a></li><li class="pageset-list-item "><a href="../../docs/installation/quick-start-windows.html" class="pageset-link">Quick Start on Windows</a></li><li class="pageset-list-item "><a href="../../docs/installation/basic-usage.html" class="pageset-link">Basic usage</a></li><li class="pageset-list-item "><a href="../../docs/installation/directory-structure.html" class="pageset-link">Directory structure</a></li><li class="pageset-list-item "><a href="../../docs/installation/create-new-project.html" class="pageset-link">Create new project</a></li><li class="pageset-list-item "><a href="../../docs/installation/configuration.html" class="pageset-link">Configuration</a></li><li class="pageset-list-item "><a href="../../docs/installation/updates.html" class="pageset-link">Updates</a></li><li class="pageset-list-item "><a href="../../docs/installation/hosting.html" class="pageset-link">Hosting / Deployment</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/content.html" class="pageset-link">Your content</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/content/metafile.html" class="pageset-link">Metafile - A page</a></li><li class="pageset-list-item "><a href="../../docs/content/write-post.html" class="pageset-link">Write post/page</a></li><li class="pageset-list-item "><a href="../../docs/content/multilanguage.html" class="pageset-link">Multilanguage</a></li><li class="pageset-list-item "><a href="../../docs/content/static-files.html" class="pageset-link">Static files / Media</a></li><li class="pageset-list-item "><a href="../../docs/content/link-to-page.html" class="pageset-link">Link to page</a></li><li class="pageset-list-item "><a href="../../docs/content/pageset.html" class="pageset-link">Pageset</a></li><li class="pageset-list-item "><a href="../../docs/content/pagination.html" class="pageset-link">Pagination</a></li><li class="pageset-list-item "><a href="../../docs/content/pagination-example.html" class="pageset-link">Pagination Example</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/themes.html" class="pageset-link">Themes - The design part</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item pageset-list-item-active"><a href="basics.html" class="pageset-link">Basics</a></li><li class="pageset-list-item "><a href="../../docs/themes/package.html" class="pageset-link">Package.json</a></li><li class="pageset-list-item "><a href="../../docs/themes/config.html" class="pageset-link">Config / Multilanguage</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/advanced.html" class="pageset-link">For the advanced</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/advanced/continuous-integration.html" class="pageset-link">Continues Integration</a></li><li class="pageset-list-item "><a href="../../docs/advanced/helper-classes.html" class="pageset-link">Helper classes</a></li></ul></li></ul></li><li class="pageset-list-item "><a href="../../changelog.html" class="pageset-link">Changelog</a></li></ul>    </div>
+</nav>
+
+<div class="page">    <div class="content">
+        <div class="head">
+            <time datetime="2018-02-01" pubdate>Last updated 01.02.2018 - Sasige version 0.4                |
+            </time>
+            <a href="https://github.com/brainfoolong/sasige-docs/edit/master/pages/docs/themes/basics.md"
+               target="_blank">Improve
+                this page</a>
+        </div>
+
+        <div class="post">
+            <p>We begin with the folder structure of a theme. In this section we always go from the theme root folder, in most cases this is the <code>theme</code> folder.</p>
+<h2>Predefined folders</h2>
+<ul>
+<li>src - A folder that can contain PHP classes, used to give theme creators a very good extensibility. For example a helper class to create some recursive listings.</li>
+<li>static - This will be copied without modification to output folder: <code>public/sasige-theme</code>. Use this for your themes static file like images and libraries.</li>
+</ul>
+<h2>SCSS support</h2>
+<p>Sasige have built in SCSS support. Just create a <code>.scss</code> file wherever you want, for example in a <code>stylesheets</code> folder. In the theme page file you can use it than like that to generate a valid css file from one or many SCSS sources.</p>
+<pre><code>&lt;link href="&lt;?= $page-&gt;getThemeCssUrl(["stylesheets/page.scss"]) ?&gt;" rel="stylesheet"&gt;</code></pre>
+<p>Following variables are available in every SCSS file.</p>
+<ul>
+<li><code>$themeUrl</code> Url to the root of the theme static folder</li>
+</ul>
+<h2>Javascript files</h2>
+<p>We have a little helper for you. You can generate one big javascript file instead of many tiny onces. You not must use this, you can. You also can store the files in the theme static folder and than link to it. Whatever you prefer.</p>
+<pre><code>&lt;script type="text/javascript" src="&lt;?= $page-&gt;getThemeJavascriptUrl(["scripts/jquery.js", "page.js"]) ?&gt;"&gt;&lt;/script&gt;</code></pre>
+<p>This will create one file that contain the contents of this 2 files.</p>
+<h2>The rest is up to you</h2>
+<p>In the root theme folder you can insert whatever you want. Every <code>.php</code> file you create here is available as a template for the user by calling <code>$page-&gt;setThemeTemplate("xxx");</code>. In the real world there are some templates you should create. Best way to see what common standards are, you can use the <a href="../installation/create-new-project.html">starter project</a>.</p>
+<ul>
+<li>site.php - Used to output raw HTML in the page layouts content.</li>
+<li>post.php - Used to output posts. Should have a headline, leadtext, timestamp and content.</li>
+</ul>        </div>
+    </div>
+    </div>
+
+<script type="text/javascript">
+  'use strict'
+  var _paq = _paq || [];
+  (function () {
+    _paq.push(['disableCookies'])
+    _paq.push(['trackPageView']);
+
+    (function () {
+      var u = 'https://scripts.0x.at/'
+      _paq.push(['setTrackerUrl', u + 'pw.php'])
+      _paq.push(['setSiteId', '12'])
+      var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0]
+      g.type = 'text/javascript'
+      g.defer = true
+      g.async = true
+      g.src = u + 'pw.js'
+      s.parentNode.insertBefore(g, s)
+    })()
+  })()
+</script>
+</body>
+</html>

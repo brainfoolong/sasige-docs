@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Sasige">
+    <title>Pageset</title>
+    <link href="../../sasige-generated/sasige-fc6e5dcc4f8c52180277880e0150d2a2.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <div class="item">
+            <div class="main">SASIGE</div>
+        </div>
+    </div>
+    <h1 class="pagetitle">Pageset        </h1>
+</header>
+<nav>
+    <div class="sidebar">
+        <ul class="pageset-list pageset-list-level-0"><li class="pageset-list-item "><a href="../../index.html" class="pageset-link">Home</a></li><li class="pageset-list-item "><a href="../../docs.html" class="pageset-link">Documentation</a><ul class="pageset-list pageset-list-level-1"><li class="pageset-list-item "><a href="../../docs/installation.html" class="pageset-link">Installation</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/installation/quick-start-linux.html" class="pageset-link">Quick Start on Linux</a></li><li class="pageset-list-item "><a href="../../docs/installation/quick-start-windows.html" class="pageset-link">Quick Start on Windows</a></li><li class="pageset-list-item "><a href="../../docs/installation/basic-usage.html" class="pageset-link">Basic usage</a></li><li class="pageset-list-item "><a href="../../docs/installation/directory-structure.html" class="pageset-link">Directory structure</a></li><li class="pageset-list-item "><a href="../../docs/installation/create-new-project.html" class="pageset-link">Create new project</a></li><li class="pageset-list-item "><a href="../../docs/installation/configuration.html" class="pageset-link">Configuration</a></li><li class="pageset-list-item "><a href="../../docs/installation/updates.html" class="pageset-link">Updates</a></li><li class="pageset-list-item "><a href="../../docs/installation/hosting.html" class="pageset-link">Hosting / Deployment</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/content.html" class="pageset-link">Your content</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/content/metafile.html" class="pageset-link">Metafile - A page</a></li><li class="pageset-list-item "><a href="../../docs/content/write-post.html" class="pageset-link">Write post/page</a></li><li class="pageset-list-item "><a href="../../docs/content/multilanguage.html" class="pageset-link">Multilanguage</a></li><li class="pageset-list-item "><a href="../../docs/content/static-files.html" class="pageset-link">Static files / Media</a></li><li class="pageset-list-item "><a href="../../docs/content/link-to-page.html" class="pageset-link">Link to page</a></li><li class="pageset-list-item pageset-list-item-active"><a href="pageset.html" class="pageset-link">Pageset</a></li><li class="pageset-list-item "><a href="../../docs/content/pagination.html" class="pageset-link">Pagination</a></li><li class="pageset-list-item "><a href="../../docs/content/pagination-example.html" class="pageset-link">Pagination Example</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/themes.html" class="pageset-link">Themes - The design part</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/themes/basics.html" class="pageset-link">Basics</a></li><li class="pageset-list-item "><a href="../../docs/themes/package.html" class="pageset-link">Package.json</a></li><li class="pageset-list-item "><a href="../../docs/themes/config.html" class="pageset-link">Config / Multilanguage</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/advanced.html" class="pageset-link">For the advanced</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/advanced/continuous-integration.html" class="pageset-link">Continues Integration</a></li><li class="pageset-list-item "><a href="../../docs/advanced/helper-classes.html" class="pageset-link">Helper classes</a></li></ul></li></ul></li><li class="pageset-list-item "><a href="../../changelog.html" class="pageset-link">Changelog</a></li></ul>    </div>
+</nav>
+
+<div class="page">    <div class="content">
+        <div class="head">
+            <time datetime="2018-02-01" pubdate>Last updated 01.02.2018 - Sasige version 0.4                |
+            </time>
+            <a href="https://github.com/brainfoolong/sasige-docs/edit/master/pages/docs/content/pageset.md"
+               target="_blank">Improve
+                this page</a>
+        </div>
+
+        <div class="post">
+            <p>Pageset's are the way to go when it comes to listing and grouping of pages. For navigation, for tree views, etc...</p>
+<h2>Pageset = Dynamic list of pages</h2>
+<p>Use cases</p>
+<ul>
+<li>I want all pages with the tag <code>navigation</code>, ordered by <code>sort</code> ascending</li>
+<li>I want all pages with language <code>en</code>, ordered by <code>sort</code> ascending</li>
+<li>I want all pages with the tag <code>post</code>, ordered by <code>date</code> descending but only in the current page <code>language</code></li>
+</ul>
+<p>Let's have a look at a common pageset that is used for navigation purposes. This is probably more informative for theme creator's. As a content writer you may never need pagesets.</p>
+<pre><code>$pageset = new Pageset();
+$pageset-&gt;includePagesByTags(["navigation"]);
+$pageset-&gt;filterPagesByLanguage($page-&gt;getLanguage());
+$pageset-&gt;setOrderBy("+sort");
+echo $pageset-&gt;getHtmlListRecursive();</code></pre>
+<p>A brief explanation</p>
+<ul>
+<li><code>$pageset = new Pageset();</code> Create a new pageset instance</li>
+<li><code>$pageset-&gt;includePagesByTags(["navigation"]);</code> Include all pags with the tag navigation</li>
+<li><code>$pageset-&gt;filterPagesByLanguage($page-&gt;getLanguage());</code> Only the pages with the language of the current page. We want stay in the same language context</li>
+<li><code>$pageset-&gt;setOrderBy("+sort");</code> We order by <code>sort</code> property of the pages, <code>+</code> means ascending </li>
+<li><code>echo $pageset-&gt;getHtmlListRecursive();</code> A shortcut to generate a <code>&lt;ul&gt;</code> html list</li>
+</ul>        </div>
+    </div>
+    </div>
+
+<script type="text/javascript">
+  'use strict'
+  var _paq = _paq || [];
+  (function () {
+    _paq.push(['disableCookies'])
+    _paq.push(['trackPageView']);
+
+    (function () {
+      var u = 'https://scripts.0x.at/'
+      _paq.push(['setTrackerUrl', u + 'pw.php'])
+      _paq.push(['setSiteId', '12'])
+      var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0]
+      g.type = 'text/javascript'
+      g.defer = true
+      g.async = true
+      g.src = u + 'pw.js'
+      s.parentNode.insertBefore(g, s)
+    })()
+  })()
+</script>
+</body>
+</html>

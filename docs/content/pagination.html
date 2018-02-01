@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Sasige">
+    <title>Pagination</title>
+    <link href="../../sasige-generated/sasige-fc6e5dcc4f8c52180277880e0150d2a2.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <div class="item">
+            <div class="main">SASIGE</div>
+        </div>
+    </div>
+    <h1 class="pagetitle">Pagination        </h1>
+</header>
+<nav>
+    <div class="sidebar">
+        <ul class="pageset-list pageset-list-level-0"><li class="pageset-list-item "><a href="../../index.html" class="pageset-link">Home</a></li><li class="pageset-list-item "><a href="../../docs.html" class="pageset-link">Documentation</a><ul class="pageset-list pageset-list-level-1"><li class="pageset-list-item "><a href="../../docs/installation.html" class="pageset-link">Installation</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/installation/quick-start-linux.html" class="pageset-link">Quick Start on Linux</a></li><li class="pageset-list-item "><a href="../../docs/installation/quick-start-windows.html" class="pageset-link">Quick Start on Windows</a></li><li class="pageset-list-item "><a href="../../docs/installation/basic-usage.html" class="pageset-link">Basic usage</a></li><li class="pageset-list-item "><a href="../../docs/installation/directory-structure.html" class="pageset-link">Directory structure</a></li><li class="pageset-list-item "><a href="../../docs/installation/create-new-project.html" class="pageset-link">Create new project</a></li><li class="pageset-list-item "><a href="../../docs/installation/configuration.html" class="pageset-link">Configuration</a></li><li class="pageset-list-item "><a href="../../docs/installation/updates.html" class="pageset-link">Updates</a></li><li class="pageset-list-item "><a href="../../docs/installation/hosting.html" class="pageset-link">Hosting / Deployment</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/content.html" class="pageset-link">Your content</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/content/metafile.html" class="pageset-link">Metafile - A page</a></li><li class="pageset-list-item "><a href="../../docs/content/write-post.html" class="pageset-link">Write post/page</a></li><li class="pageset-list-item "><a href="../../docs/content/multilanguage.html" class="pageset-link">Multilanguage</a></li><li class="pageset-list-item "><a href="../../docs/content/static-files.html" class="pageset-link">Static files / Media</a></li><li class="pageset-list-item "><a href="../../docs/content/link-to-page.html" class="pageset-link">Link to page</a></li><li class="pageset-list-item "><a href="../../docs/content/pageset.html" class="pageset-link">Pageset</a></li><li class="pageset-list-item pageset-list-item-active"><a href="pagination.html" class="pageset-link">Pagination</a></li><li class="pageset-list-item "><a href="../../docs/content/pagination-example.html" class="pageset-link">Pagination Example</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/themes.html" class="pageset-link">Themes - The design part</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/themes/basics.html" class="pageset-link">Basics</a></li><li class="pageset-list-item "><a href="../../docs/themes/package.html" class="pageset-link">Package.json</a></li><li class="pageset-list-item "><a href="../../docs/themes/config.html" class="pageset-link">Config / Multilanguage</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/advanced.html" class="pageset-link">For the advanced</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/advanced/continuous-integration.html" class="pageset-link">Continues Integration</a></li><li class="pageset-list-item "><a href="../../docs/advanced/helper-classes.html" class="pageset-link">Helper classes</a></li></ul></li></ul></li><li class="pageset-list-item "><a href="../../changelog.html" class="pageset-link">Changelog</a></li></ul>    </div>
+</nav>
+
+<div class="page">    <div class="content">
+        <div class="head">
+            <time datetime="2018-02-01" pubdate>Last updated 01.02.2018 - Sasige version 0.4                |
+            </time>
+            <a href="https://github.com/brainfoolong/sasige-docs/edit/master/pages/docs/content/pagination.md"
+               target="_blank">Improve
+                this page</a>
+        </div>
+
+        <div class="post">
+            <p>When it comes to listing if many pages you may need a pagination. For example you have 400 posts and want only 50 per site.</p>
+<h2>Pagination - A friend of pagesets</h2>
+<p>A pagination requires a <a href="pageset.html">pageset</a>. The job of the pagination is to split the pageset up in a number of subsites.</p>
+<p>With the example above, you have 400 posts and you want 50 posts per page. So you have a total of 8 pages.</p>
+<p>Here is an example for the basic usage of full page using pagination. Most things should be clear when you've carefully read the previous documentation parts. Notice: This whole thing can also be included in a theme template. A content writer should not think about it. A detailed explanation is in the theme section.</p>
+<pre><code>&lt;?php
+namespace Nullix\Sasige;
+
+$page = Page::getCurrent();
+$page-&gt;setPageTitle("Planung und alles vor dem Bau");
+$page-&gt;setDate("now");
+$page-&gt;setLabel("Planung");
+$page-&gt;setTags(["post"]);
+$page-&gt;setThemeTemplate("post");
+
+$pageset = new Pageset();
+$pageset-&gt;includePagesByTags(["post"]);
+$pageset-&gt;filterPagesByLanguage($page-&gt;getLanguage());
+$pageset-&gt;setOrderBy("-date");
+
+$pagination = new Pagination($page, $pageset);
+$pagination-&gt;setEntriesPerPage(50);
+
+$page-&gt;setContentByCallable(function (Page $page) {
+    $pagination = $page-&gt;getPagination();
+    ThemeHelper::listPosts($pagination);
+    echo $pagination-&gt;getNumericPageHtmlList();
+});</code></pre>
+<p>Now going deeper</p>
+<ul>
+<li>We already know the part of pageset and what it does.</li>
+<li><code>$pagination = new Pagination($page, $pageset);</code> Create a new pagination instance</li>
+<li><code>$page-&gt;setContentByCallable(function (Page $page) {</code> Open a anonym function that will be executed when fetching the page content</li>
+<li><code>$pagination = $page-&gt;getPagination();</code> Get the pagination instance that's associated with the page</li>
+<li><code>ThemeHelper::listPosts($pagination);</code> For simplifying things, here we have a helper class that manage the output of the pagelist</li>
+<li><code>echo $pagination-&gt;getNumericPageHtmlList();</code>Display a numeric list with all 8 pages to click through</li>
+</ul>
+<h2>Deeper look into ThemeHelper::listPosts()</h2>
+<p>As you can see, this is a little more advanced. You, as a content writer, should not need to think about it. It's most like already done by the theme creator.</p>
+<pre><code>public static function listPosts(Pagination $pagination)
+{
+    $pages = $pagination-&gt;getPagesOfPage();
+    foreach ($pages as $navPage) {
+        $date = $navPage-&gt;getDate();
+        echo '&lt;article class="post-entry"&gt;';
+        echo '&lt;h2&gt;&lt;a href="' . $navPage-&gt;getUrl() . '"&gt;' . $navPage-&gt;getPageTitle() . '&lt;/a&gt;&lt;/h2&gt;';
+        echo '&lt;div class="time"&gt;&lt;time datetime="' . $date-&gt;format("Y-m-d") . '"&gt;&lt;span class="month"&gt;' . strftime("%b",
+                $date-&gt;getTimestamp()) . '&lt;/span&gt;&lt;span class="day"&gt;' . (int)$date-&gt;format("d") . '&lt;/span&gt;&lt;span class="year"&gt;' . $date-&gt;format("Y") . '&lt;/span&gt;&lt;/time&gt;&lt;/div&gt;';
+        echo '&lt;p class="leadtext"&gt;' . $navPage-&gt;getLeadText() . ' | &lt;a href="' . $navPage-&gt;getUrl() . '"&gt;Weiterlesen&lt;/a&gt;&lt;/p&gt;';
+        echo '&lt;/article&gt;';
+    }
+}</code></pre>
+<p>That's the internal magic. Take a list of pages for each page (The generator repeat this step for every page, in our example 8 times). And for each page we do a list of contained pages with some lead text and timestamp information. </p>        </div>
+    </div>
+    </div>
+
+<script type="text/javascript">
+  'use strict'
+  var _paq = _paq || [];
+  (function () {
+    _paq.push(['disableCookies'])
+    _paq.push(['trackPageView']);
+
+    (function () {
+      var u = 'https://scripts.0x.at/'
+      _paq.push(['setTrackerUrl', u + 'pw.php'])
+      _paq.push(['setSiteId', '12'])
+      var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0]
+      g.type = 'text/javascript'
+      g.defer = true
+      g.async = true
+      g.src = u + 'pw.js'
+      s.parentNode.insertBefore(g, s)
+    })()
+  })()
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Sasige">
+    <title>Helper classes</title>
+    <link href="../../sasige-generated/sasige-fc6e5dcc4f8c52180277880e0150d2a2.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <div class="item">
+            <div class="main">SASIGE</div>
+        </div>
+    </div>
+    <h1 class="pagetitle">Helper classes        </h1>
+</header>
+<nav>
+    <div class="sidebar">
+        <ul class="pageset-list pageset-list-level-0"><li class="pageset-list-item "><a href="../../index.html" class="pageset-link">Home</a></li><li class="pageset-list-item "><a href="../../docs.html" class="pageset-link">Documentation</a><ul class="pageset-list pageset-list-level-1"><li class="pageset-list-item "><a href="../../docs/installation.html" class="pageset-link">Installation</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/installation/quick-start-linux.html" class="pageset-link">Quick Start on Linux</a></li><li class="pageset-list-item "><a href="../../docs/installation/quick-start-windows.html" class="pageset-link">Quick Start on Windows</a></li><li class="pageset-list-item "><a href="../../docs/installation/basic-usage.html" class="pageset-link">Basic usage</a></li><li class="pageset-list-item "><a href="../../docs/installation/directory-structure.html" class="pageset-link">Directory structure</a></li><li class="pageset-list-item "><a href="../../docs/installation/create-new-project.html" class="pageset-link">Create new project</a></li><li class="pageset-list-item "><a href="../../docs/installation/configuration.html" class="pageset-link">Configuration</a></li><li class="pageset-list-item "><a href="../../docs/installation/updates.html" class="pageset-link">Updates</a></li><li class="pageset-list-item "><a href="../../docs/installation/hosting.html" class="pageset-link">Hosting / Deployment</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/content.html" class="pageset-link">Your content</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/content/metafile.html" class="pageset-link">Metafile - A page</a></li><li class="pageset-list-item "><a href="../../docs/content/write-post.html" class="pageset-link">Write post/page</a></li><li class="pageset-list-item "><a href="../../docs/content/multilanguage.html" class="pageset-link">Multilanguage</a></li><li class="pageset-list-item "><a href="../../docs/content/static-files.html" class="pageset-link">Static files / Media</a></li><li class="pageset-list-item "><a href="../../docs/content/link-to-page.html" class="pageset-link">Link to page</a></li><li class="pageset-list-item "><a href="../../docs/content/pageset.html" class="pageset-link">Pageset</a></li><li class="pageset-list-item "><a href="../../docs/content/pagination.html" class="pageset-link">Pagination</a></li><li class="pageset-list-item "><a href="../../docs/content/pagination-example.html" class="pageset-link">Pagination Example</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/themes.html" class="pageset-link">Themes - The design part</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/themes/basics.html" class="pageset-link">Basics</a></li><li class="pageset-list-item "><a href="../../docs/themes/package.html" class="pageset-link">Package.json</a></li><li class="pageset-list-item "><a href="../../docs/themes/config.html" class="pageset-link">Config / Multilanguage</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/advanced.html" class="pageset-link">For the advanced</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/advanced/continuous-integration.html" class="pageset-link">Continues Integration</a></li><li class="pageset-list-item pageset-list-item-active"><a href="helper-classes.html" class="pageset-link">Helper classes</a></li></ul></li></ul></li><li class="pageset-list-item "><a href="../../changelog.html" class="pageset-link">Changelog</a></li></ul>    </div>
+</nav>
+
+<div class="page">    <div class="content">
+        <div class="head">
+            <time datetime="2018-02-01" pubdate>Last updated 01.02.2018 - Sasige version 0.4                |
+            </time>
+            <a href="https://github.com/brainfoolong/sasige-docs/edit/master/pages/docs/advanced/helper-classes.md"
+               target="_blank">Improve
+                this page</a>
+        </div>
+
+        <div class="post">
+            <p>Helper classes are especially helpful when you have things that repeat often. For example you want to show a month table on different pages. That requires a lot of markup and it's mostly the same. That's a perfect case for a helper class.</p>
+<h2>It goes into 'src'</h2>
+<p>In your project root folder, where your <code>pages, public, sasige</code> folder is in, you can create a folder named <code>src</code>.</p>
+<h2>Helper class structure</h2>
+<p>An example</p>
+<p>Filename: src/ListHelper.php</p>
+<pre><code>&lt;?php
+
+namespace Nullix\Sasige;
+
+class ListHelper
+{
+    public static function showList()
+    {
+        echo '&lt;ul&gt;';
+        echo '&lt;li&gt;Many more&lt;/li&gt;';
+        echo '&lt;/ul&gt;';
+    }
+}</code></pre>
+<p>There are a few things you need to know</p>
+<ul>
+<li>The filename must be the same as the class name. Case sensitive</li>
+<li>Every class file must begin with this two lines
+<ul>
+<li><code>&lt;?php</code></li>
+<li><code>namespace Nullix\Sasige;</code></li>
+</ul></li>
+<li>You cannot use an existing class name that is already used by <code>Sasige</code>. For example <code>Page</code> will result in an error. 
+<ul>
+<li>For sure, you can when you use another namespace but that make things a lot more complicated later. Just use a unique class name.</li>
+</ul></li>
+<li>Class name cannot contain any special characters. Only A-Z is the best.</li>
+<li>Only use static functions with <code>public static function yourFunctionName(){}</code></li>
+</ul>
+<h2>Helper class usage</h2>
+<p>Now that we know how we can create a helper class, we also want to use it. An example of usage in a page.</p>
+<pre><code>&lt;?php
+
+namespace Nullix\Sasige;
+
+$page = Page::getCurrent();
+$page-&gt;setPageTitle("Helper classes");
+... // more page configs, skip for tutorial purposes
+$page-&gt;setContentByCallable(function (Page $page) {
+    ?&gt;
+    My content bla foo bar
+    &lt;?php
+    ListHelper::showList();
+});</code></pre>
+<p>As you can see, you need <code>$page-&gt;setContentByCallable</code> to be able to use helper classes. They cannot be used in markdown files or pure html files.</p>
+<h2>The same rule for theme helper classes</h2>
+<p>Theme folder can also have a <code>src</code> folder. So, a theme can also provide helper classes.</p>        </div>
+    </div>
+    </div>
+
+<script type="text/javascript">
+  'use strict'
+  var _paq = _paq || [];
+  (function () {
+    _paq.push(['disableCookies'])
+    _paq.push(['trackPageView']);
+
+    (function () {
+      var u = 'https://scripts.0x.at/'
+      _paq.push(['setTrackerUrl', u + 'pw.php'])
+      _paq.push(['setSiteId', '12'])
+      var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0]
+      g.type = 'text/javascript'
+      g.defer = true
+      g.async = true
+      g.src = u + 'pw.js'
+      s.parentNode.insertBefore(g, s)
+    })()
+  })()
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Sasige">
+    <title>Metafile - A page</title>
+    <link href="../../sasige-generated/sasige-fc6e5dcc4f8c52180277880e0150d2a2.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <div class="item">
+            <div class="main">SASIGE</div>
+        </div>
+    </div>
+    <h1 class="pagetitle">Metafile - A page        </h1>
+</header>
+<nav>
+    <div class="sidebar">
+        <ul class="pageset-list pageset-list-level-0"><li class="pageset-list-item "><a href="../../index.html" class="pageset-link">Home</a></li><li class="pageset-list-item "><a href="../../docs.html" class="pageset-link">Documentation</a><ul class="pageset-list pageset-list-level-1"><li class="pageset-list-item "><a href="../../docs/installation.html" class="pageset-link">Installation</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/installation/quick-start-linux.html" class="pageset-link">Quick Start on Linux</a></li><li class="pageset-list-item "><a href="../../docs/installation/quick-start-windows.html" class="pageset-link">Quick Start on Windows</a></li><li class="pageset-list-item "><a href="../../docs/installation/basic-usage.html" class="pageset-link">Basic usage</a></li><li class="pageset-list-item "><a href="../../docs/installation/directory-structure.html" class="pageset-link">Directory structure</a></li><li class="pageset-list-item "><a href="../../docs/installation/create-new-project.html" class="pageset-link">Create new project</a></li><li class="pageset-list-item "><a href="../../docs/installation/configuration.html" class="pageset-link">Configuration</a></li><li class="pageset-list-item "><a href="../../docs/installation/updates.html" class="pageset-link">Updates</a></li><li class="pageset-list-item "><a href="../../docs/installation/hosting.html" class="pageset-link">Hosting / Deployment</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/content.html" class="pageset-link">Your content</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item pageset-list-item-active"><a href="metafile.html" class="pageset-link">Metafile - A page</a></li><li class="pageset-list-item "><a href="../../docs/content/write-post.html" class="pageset-link">Write post/page</a></li><li class="pageset-list-item "><a href="../../docs/content/multilanguage.html" class="pageset-link">Multilanguage</a></li><li class="pageset-list-item "><a href="../../docs/content/static-files.html" class="pageset-link">Static files / Media</a></li><li class="pageset-list-item "><a href="../../docs/content/link-to-page.html" class="pageset-link">Link to page</a></li><li class="pageset-list-item "><a href="../../docs/content/pageset.html" class="pageset-link">Pageset</a></li><li class="pageset-list-item "><a href="../../docs/content/pagination.html" class="pageset-link">Pagination</a></li><li class="pageset-list-item "><a href="../../docs/content/pagination-example.html" class="pageset-link">Pagination Example</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/themes.html" class="pageset-link">Themes - The design part</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/themes/basics.html" class="pageset-link">Basics</a></li><li class="pageset-list-item "><a href="../../docs/themes/package.html" class="pageset-link">Package.json</a></li><li class="pageset-list-item "><a href="../../docs/themes/config.html" class="pageset-link">Config / Multilanguage</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/advanced.html" class="pageset-link">For the advanced</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/advanced/continuous-integration.html" class="pageset-link">Continues Integration</a></li><li class="pageset-list-item "><a href="../../docs/advanced/helper-classes.html" class="pageset-link">Helper classes</a></li></ul></li></ul></li><li class="pageset-list-item "><a href="../../changelog.html" class="pageset-link">Changelog</a></li></ul>    </div>
+</nav>
+
+<div class="page">    <div class="content">
+        <div class="head">
+            <time datetime="2018-02-01" pubdate>Last updated 01.02.2018 - Sasige version 0.4                |
+            </time>
+            <a href="https://github.com/brainfoolong/sasige-docs/edit/master/pages/docs/content/metafile.md"
+               target="_blank">Improve
+                this page</a>
+        </div>
+
+        <div class="post">
+            <p>A metafile control everything of a page. It can also contain the page content itself. But, most likely you'll write your content in markdown or html. For more power you have also some other options.</p>
+<h2>Metafile = Page</h2>
+<p>A page must have a <code>metafile</code>. Or even better, a metafile is the page. File-ending must be <code>.php</code>. This metafile control everything: How a page is generated, what content it will show, what language it is, the date it was created, which position in navigation, etc... There are ton's of options here.</p>
+<h2>Basic metafile</h2>
+<p>A metafile must contain the following and can be extended with more options.</p>
+<pre><code>&lt;?php
+namespace Nullix\Sasige;    
+$page = Page::getCurrent();</code></pre>
+<p>Let's take an example of this documentation page</p>
+<pre><code>&lt;?php
+namespace Nullix\Sasige;    
+$page = Page::getCurrent();
+$page-&gt;setPageTitle("Metafile - A page");
+$page-&gt;setParentToDirectory();
+$page-&gt;setDate("now");
+$page-&gt;setLabel("Metafile - A page");
+$page-&gt;setSort(1);
+$page-&gt;setTags(["site", "navigation"]);
+$page-&gt;setThemeTemplate("post");
+$page-&gt;setContentByMarkdownFileSelf();</code></pre>
+<p>So, what does all this? A short explanation.</p>
+<ul>
+<li><code>&lt;?php</code> Open tag for PHP - Mark begin of PHP code</li>
+<li><code>namespace Nullix\Sasige;</code> The namespace where in, is always the same</li>
+<li><code>$page-&gt;setPageTitle("Metafile - A page");</code> Set the website pagetitle</li>
+<li><code>$page-&gt;setParentToDirectory();</code> The page is parent of the <code>pages/docs/content.php</code>, for navigation purposes</li>
+<li><code>$page-&gt;setDate("now");</code> The date when the page has been modified. <code>now</code> means the time at it will be generated</li>
+<li><code>$page-&gt;setLabel("Metafile - A page");</code> The label for navigation</li>
+<li><code>$page-&gt;setSort(1);</code> The sort for navigation</li>
+<li><code>$page-&gt;setTags(["site", "navigation"]);</code> The tags of this page, used for pageset and navigation</li>
+<li><code>$page-&gt;setThemeTemplate("post");</code> Set the theme template the should be used</li>
+<li><code>$page-&gt;setContentByMarkdownFileSelf();</code> Use a .md file for content with the same name as the metafile</li>
+</ul>        </div>
+    </div>
+    </div>
+
+<script type="text/javascript">
+  'use strict'
+  var _paq = _paq || [];
+  (function () {
+    _paq.push(['disableCookies'])
+    _paq.push(['trackPageView']);
+
+    (function () {
+      var u = 'https://scripts.0x.at/'
+      _paq.push(['setTrackerUrl', u + 'pw.php'])
+      _paq.push(['setSiteId', '12'])
+      var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0]
+      g.type = 'text/javascript'
+      g.defer = true
+      g.async = true
+      g.src = u + 'pw.js'
+      s.parentNode.insertBefore(g, s)
+    })()
+  })()
+</script>
+</body>
+</html>

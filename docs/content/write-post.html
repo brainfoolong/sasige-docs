@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Sasige">
+    <title>Write post/page</title>
+    <link href="../../sasige-generated/sasige-fc6e5dcc4f8c52180277880e0150d2a2.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <div class="item">
+            <div class="main">SASIGE</div>
+        </div>
+    </div>
+    <h1 class="pagetitle">Write post/page        </h1>
+</header>
+<nav>
+    <div class="sidebar">
+        <ul class="pageset-list pageset-list-level-0"><li class="pageset-list-item "><a href="../../index.html" class="pageset-link">Home</a></li><li class="pageset-list-item "><a href="../../docs.html" class="pageset-link">Documentation</a><ul class="pageset-list pageset-list-level-1"><li class="pageset-list-item "><a href="../../docs/installation.html" class="pageset-link">Installation</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/installation/quick-start-linux.html" class="pageset-link">Quick Start on Linux</a></li><li class="pageset-list-item "><a href="../../docs/installation/quick-start-windows.html" class="pageset-link">Quick Start on Windows</a></li><li class="pageset-list-item "><a href="../../docs/installation/basic-usage.html" class="pageset-link">Basic usage</a></li><li class="pageset-list-item "><a href="../../docs/installation/directory-structure.html" class="pageset-link">Directory structure</a></li><li class="pageset-list-item "><a href="../../docs/installation/create-new-project.html" class="pageset-link">Create new project</a></li><li class="pageset-list-item "><a href="../../docs/installation/configuration.html" class="pageset-link">Configuration</a></li><li class="pageset-list-item "><a href="../../docs/installation/updates.html" class="pageset-link">Updates</a></li><li class="pageset-list-item "><a href="../../docs/installation/hosting.html" class="pageset-link">Hosting / Deployment</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/content.html" class="pageset-link">Your content</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/content/metafile.html" class="pageset-link">Metafile - A page</a></li><li class="pageset-list-item pageset-list-item-active"><a href="write-post.html" class="pageset-link">Write post/page</a></li><li class="pageset-list-item "><a href="../../docs/content/multilanguage.html" class="pageset-link">Multilanguage</a></li><li class="pageset-list-item "><a href="../../docs/content/static-files.html" class="pageset-link">Static files / Media</a></li><li class="pageset-list-item "><a href="../../docs/content/link-to-page.html" class="pageset-link">Link to page</a></li><li class="pageset-list-item "><a href="../../docs/content/pageset.html" class="pageset-link">Pageset</a></li><li class="pageset-list-item "><a href="../../docs/content/pagination.html" class="pageset-link">Pagination</a></li><li class="pageset-list-item "><a href="../../docs/content/pagination-example.html" class="pageset-link">Pagination Example</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/themes.html" class="pageset-link">Themes - The design part</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/themes/basics.html" class="pageset-link">Basics</a></li><li class="pageset-list-item "><a href="../../docs/themes/package.html" class="pageset-link">Package.json</a></li><li class="pageset-list-item "><a href="../../docs/themes/config.html" class="pageset-link">Config / Multilanguage</a></li></ul></li><li class="pageset-list-item "><a href="../../docs/advanced.html" class="pageset-link">For the advanced</a><ul class="pageset-list pageset-list-level-2"><li class="pageset-list-item "><a href="../../docs/advanced/continuous-integration.html" class="pageset-link">Continues Integration</a></li><li class="pageset-list-item "><a href="../../docs/advanced/helper-classes.html" class="pageset-link">Helper classes</a></li></ul></li></ul></li><li class="pageset-list-item "><a href="../../changelog.html" class="pageset-link">Changelog</a></li></ul>    </div>
+</nav>
+
+<div class="page">    <div class="content">
+        <div class="head">
+            <time datetime="2018-02-01" pubdate>Last updated 01.02.2018 - Sasige version 0.4                |
+            </time>
+            <a href="https://github.com/brainfoolong/sasige-docs/edit/master/pages/docs/content/write-post.md"
+               target="_blank">Improve
+                this page</a>
+        </div>
+
+        <div class="post">
+            <p>Technically, there is no difference in Sasige whether you write a post, a page or something else. We call it simply a <code>page</code>.</p>
+<h2>Basics</h2>
+<p>You have the <code>pages</code> folder. All what you put in there will be converted to websites. The name of a <a href="metafile.html">metafile</a> is the same name as the resulting website html file. You can name the file to whatever you want. You set the date, sorting, title, language, etc... in the metafile so everything can be completely independent from the filename.</p>
+<h2>Metafile = Page</h2>
+<p>See more on that in the <a href="metafile.html">metafile</a> section.</p>
+<h2>A new page</h2>
+<p>The website is generated by just the files in the <code>pages</code> folder.</p>
+<p>Copy an existing page, rename it and update the metafile. You can always take a reference from our <code>sasige-docs</code> repository which uses every available technique.</p>
+<h2>Drafts</h2>
+<p>Every page you create can be in draft. Draft simply means you remove the <code>date</code> of a page. A page without a date is a draft page and it will not be published to the <code>output folder</code>. So remove the line with <code>$page-&gt;setDate(xxx);</code> from the metafile.</p>
+<h2>Markdown / Html</h2>
+<p>You have the choice. You can use markdown to write your content. You can also use pure HTML to write your content.</p>
+<h2>For the experts: Content in metafile</h2>
+<p>If you need more power and flexibility while you create a page, you probably want the full features of PHP. This means you can create the website with the power of the PHP language.</p>
+<pre><code>$page-&gt;setContentByCallable(function (Page $page) {
+    ?&gt;
+    My content
+    &lt;?
+});</code></pre>
+<p>What are the benefits of that? Just to name a few: <a href="http://php.net/manual/en/language.control-structures.php">Control structures (Loops, Conditions, etc...)</a>, <a href="http://php.net/manual/en/ref.strings.php">StringFunctions</a>, dynamic content (see bellow), and many more...</p>
+<h2>Dynamic content</h2>
+<p>You maybe need something more dynamic as a normal static website generator can offer. With Sasige you have the power of PHP, a fully functional server scripting language. Let's just name a few examples what someone maybe need.</p>
+<ul>
+<li>
+<p>Calling an API/website during generation. Example: A GitHub project. Maybe you have a changelog in your repository but for some reason you want the changelog nicely formated in your website style. So you can just use <code>file_get_contents(URL)</code> to load the contents and than you can use it in your content. For sure, this case can also be done with javascript and on client side. But all what's not required by the client is a plus in usability.</p>
+</li>
+<li>Your page require some repeating rows. Let's say you want list of all days of a year in a list. Writing it manually will take too much time. So you just use a <code>for loop from 1 to 365</code> and you're fine in seconds.</li>
+</ul>        </div>
+    </div>
+    </div>
+
+<script type="text/javascript">
+  'use strict'
+  var _paq = _paq || [];
+  (function () {
+    _paq.push(['disableCookies'])
+    _paq.push(['trackPageView']);
+
+    (function () {
+      var u = 'https://scripts.0x.at/'
+      _paq.push(['setTrackerUrl', u + 'pw.php'])
+      _paq.push(['setSiteId', '12'])
+      var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0]
+      g.type = 'text/javascript'
+      g.defer = true
+      g.async = true
+      g.src = u + 'pw.js'
+      s.parentNode.insertBefore(g, s)
+    })()
+  })()
+</script>
+</body>
+</html>
